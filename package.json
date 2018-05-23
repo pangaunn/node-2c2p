@@ -1,0 +1,11 @@
+{
+  "name": "node-2c2p",
+  "version": "0.0.1",
+  "description": "encryption payment action for 2c2p",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
