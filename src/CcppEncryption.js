@@ -19,5 +19,9 @@ export const CcppEncryption = {
     let returnPEM = pem.substring(23).trim()
     returnPEM = returnPEM.replace('-----END PKCS7-----', '')
     return returnPEM.replace(/\r?\n|\r/g, '')
-  }
+  },
+  decrypt (content, privateKeyPath, password) {
+    let privateKey = fs.readFileSync(privateKeyPath).toString()
+    return this.decryptWithPem(content, privateKey, password)
+  },
 }
