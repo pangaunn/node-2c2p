@@ -20,8 +20,16 @@ export const CcppEncryption = {
     returnPEM = returnPEM.replace('-----END PKCS7-----', '')
     return returnPEM.replace(/\r?\n|\r/g, '')
   },
-  decrypt (content, privateKeyPath, password) {
+  decrypt (content, privateKeyPath) {
+    const password = '2c2p'
     let privateKey = fs.readFileSync(privateKeyPath).toString()
     return this.decryptWithPem(content, privateKey, password)
   },
+  decryptWithPem (content, privateKey, password) {
+    let pem = '-----BEGIN PKCS7-----\n' + content + '-----END PKCS7-----'
+    let p7 = forge.pkcs7.messageFromPem(pem)
+    let decryptRsaPrivateKey = forge.pki.decryptRsaPrivateKey(privateKey, password)
+    p7.decrypt(p7.recipients[0], decryptRsaPrivateKey)
+    return p7.content.toString('utf-8')
+  }
 }
