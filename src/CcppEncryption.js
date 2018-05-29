@@ -2,12 +2,12 @@ const fs = require('fs')
 const forge = require('node-forge')
 
 export const CcppEncryption = {
-  encrypt (xmlString, keyPath) {
-    const cert = fs.readFileSync(certFile).toString()
-    return this.encryptWithCert(xmlString, cert)
+  encrypt (xmlString, publicKeyPath) {
+    const publicKey = fs.readFileSync(publicKeyPath).toString()
+    return this.encryptWithCert(xmlString, publicKey)
   },
-  encryptWithCert (xmlString, cert) {
-    const certFormPem = forge.pki.certificateFromPem(cert)
+  encryptWithCert (xmlString, publicKey) {
+    const certFormPem = forge.pki.certificateFromPem(publicKey)
 
     let p7 = forge.pkcs7.createEnvelopedData()
     p7.addRecipient(certFormPem)
