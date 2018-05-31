@@ -2,11 +2,12 @@
   "name": "node-2c2p",
   "version": "0.0.1",
   "description": "encryption payment action for 2c2p",
-  "main": "index.js",
+  "main": "src/CcppEncryption.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "aunn <aunn_it08@hotmail.com>",
+  "homepage": "https://github.com/pangaunn/node-2c2p",
   "license": "ISC",
   "dependencies": {
     "node-forge": "^0.7.5"
