@@ -1,7 +1,7 @@
 ## Node-2c2p
 
 ### Introduction
-This is helper function for encryt and decrypt payment action for 2c2p
+Helper function for encrypt and decrypt 2c2p payment action api.
 
 ### Installation
 ```
