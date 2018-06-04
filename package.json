@@ -1,6 +1,6 @@
 {
   "name": "node-2c2p",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "encryption payment action for 2c2p",
   "main": "src/CcppEncryption.js",
   "scripts": {
