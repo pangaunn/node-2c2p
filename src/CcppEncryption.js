@@ -1,7 +1,7 @@
 const fs = require('fs')
 const forge = require('node-forge')
 
-export const CcppEncryption = {
+module.exports = {
   /**
    * @param {String} xmlString xml string that you want to encrypt.
    * @param {String} publicKeyPath path to your certificate file (this file you have to request from 2c2p)
